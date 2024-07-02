@@ -1,0 +1,229 @@
+/* .topbar.is-scrolled.is-pinned, .topbar.is-scrolled.is-stuck:has(.megamenu__item[aria-expanded=true]) {
+  transform: translateY(0);
+}
+.topbar.is-scrolled.is-stuck {
+  transform: translateY(calc(-100% - var(--topbar-offset)));
+} */
+
+nav{
+  position: sticky;
+  inset: 2rem 3rem auto;
+  padding: 1rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: clamp(0.5rem , 2.5vw, 3rem);
+  background-color: transparent;
+  backdrop-filter: blur(15px);
+  border-radius: .5rem;
+  border: 2px solid #000;
+  margin: 5rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  z-index: 1;
+  /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 3px 10px;
+}
+
+.logo img{
+  height: 80px;
+  width: 80px;
+}
+
+.logo h1{
+  font-size: 35px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: space-around;
+}
+
+nav ul li {
+  margin: 0 2rem;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+nav ul li:last-child{
+  margin-right: 0;
+}
+
+nav ul li a {
+  color: #000;
+  text-decoration: none;
+}
+
+
+
+nav ul.large li:not(:last-child) a {
+  color: rgba(0, 0, 0, 0.7);
+  /* transition: color .2s; */
+  transition: .2s;
+}
+
+nav ul.large li:not(:last-child):hover a,
+nav ul.large li:not(:last-child):focus a,
+nav ul.large li:not(:last-child):active a {
+  border-bottom: 2px solid #000;
+  color: #000;
+  padding-bottom: 2px;
+  border-radius: 2px;
+  /* transition: color 0.2s, border-bottom 0.2s; */
+}
+
+/* nav ul.large li:last-child a {
+  color: #fff;
+  transition: .5s;
+}
+
+nav ul.large li:last-child:hover a,
+nav ul.large li:last-child:focus a,
+nav ul.large li:last-child:active a {
+  background-color: #fff;
+  color: #000;
+  font-size: 17px;
+  border: 1px solid #000;
+  padding: 15px 17px;
+  border-radius: 30px;
+  font-size: 18px;
+} */
+
+
+.signin{
+  background-color: #000;
+  color: #fff;
+  padding: 15px 17px;
+  border-radius: 30px;
+  font-size: 18px;
+  transition: .5s;
+  outline: none;
+  border: none;
+  font-weight: 500;
+}
+
+.signin:hover{
+  /* background-color: transparent; */
+  /* backdrop-filter: blur(100px); */
+  background-color: rgba(255,255,255,.4);
+  /* background-color: #fff; */
+  color: #000;
+  /* font-weight: 600; */
+  font-size: 17px;
+  border: 1px solid #000;
+  outline: 1px solid #000;
+  /* text-decoration: 1px underline wavy #000; */
+  padding-bottom: 16px;
+}
+
+/* .signin:hover a{
+  text-decoration: 1px underline wavy #000;
+} */
+
+.small{
+  display: none;
+  /* position: relative; */
+}
+
+.small-menu {
+  position: absolute;
+  top: 80%;
+  right: 40px;
+  /* background-color: #fff; */
+  /* background-color: rgba(255,255,255,1); */
+  background-color: transparent;
+  backdrop-filter: blur(50px);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 200px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  z-index: 1;
+  border-radius: 15px;
+  border: 3px solid rgba(0,0,0,.8);
+}
+
+.small-menu li{
+  text-align: center;
+  text-decoration: underline wavy rgba(0, 0, 0, 0.5);
+  /* text-decoration-style: wavy; */
+  padding: 10px 20px 20px 20px;
+  /* border: 1px solid #000; */
+  border-bottom: 2px solid #000;
+  width: 100%;
+  margin: 0;
+  margin-top: 10px;
+}
+
+
+.small-menu li:last-child{
+  border: none;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  text-decoration: none;
+}
+
+.small-menu li:not(:last-child) a {
+  color: rgba(0, 0, 0, 0.7);
+  transition: .2s;
+  text-decoration-color: rgba(0,0,0,.5);
+}
+
+.small-menu li:not(:last-child):hover a {
+  color: #000;
+  /* text-decoration-color: rgba(0,0,0,1); */
+}
+
+
+
+@media screen and (max-width:992px){
+  nav{
+    padding: 10px 60px;
+  }
+  .large{
+    display: none;
+  }
+  .small{
+    display: flex;
+    cursor: pointer;
+  }
+  .small img{
+    height: 40px;
+    width: 40px;
+  }
+}
+
+@media screen and (max-width: 576px){
+  nav{
+    padding: 10px 30px;
+  }
+
+  .small-menu{
+    right: 10px;
+  }
+}
+
+
+
+
+
+
+/* nav {
+  color: #000;
+  padding: 1rem;
+  width: 100vw;
+  position: sticky;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  backdrop-filter: blur(15px);
+  z-index: 1;
+  border: 1px solid #000;
+  padding: 10px 120px; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-left: none;
+  border-right: none;
+} */
